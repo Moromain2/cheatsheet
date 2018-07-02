@@ -46,4 +46,4 @@ gem 'paperclip'
 #Tag system
 gem 'acts-as-taggable-on', '~> 6.0'
 
-ruby-'2.3.4'
+ruby '2.3.4'
