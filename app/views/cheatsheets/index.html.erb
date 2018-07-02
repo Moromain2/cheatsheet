@@ -1,0 +1,19 @@
+<div class="columns">
+  <div class="side-nav column is-3">
+    <ul>
+      <% @cheatsheets.each do |cheatsheet| %>
+        <li><%= link_to cheatsheet.title, cheatsheet_path(cheatsheet) %> (in <em><%= cheatsheet.category %></em>)</li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="content column is-9 is-offset-3">
+    <div class="show-page">
+      <div class="content-wrapper">
+        <h1 class="home-static-title">Last publication 🤓</h1>
+        <p>Published in <strong><%= @cheatsheets.last.category %></strong></p>
+        <h1><%= @cheatsheets.last.title %></h1>
+        <%= @cheatsheets.last.body.html_safe %>
+    </div>
+  </div>
+</div>

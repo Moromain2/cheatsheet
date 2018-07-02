@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CheatApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag Ckeditor.cdn_url %>
+  </head>
+
+  <body>
+    <div class="top-nav">
+      <nav>
+        <ul>
+          <li><%= link_to 'Home', root_path %></li>
+          <li><%= link_to 'New', new_cheatsheet_path, :class => 'button-new' %></li>
+          <li>|</li>
+          <li class="top-nav-label">Languages:</li>
+          <li>HTML</li>
+          <li>RoR</li>
+          <li>CSS</li>
+          <li>Js.</li>
+        </ul>
+      </nav>
+    </div>
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+<div class="content-wrapper">
+  <p>Published in <strong><%= @cheatsheet.category %></strong></p>
+  <p>Tags: <span class="tag-view"><%= raw @cheatsheet.tag_list.map { |t| link_to t, tag_path(t) }. join(', ') %></span></p>
+  <h1><%= @cheatsheet.title %></h1>
+  <%= @cheatsheet.body.html_safe %>
+
+  <div class="crud-links">
+    <%= link_to 'Edit', edit_cheatsheet_path, :class => 'button is-primary is-small is-outlined' %>
+    <%= link_to 'Delete', @cheatsheet, method: :delete, data: {confirm: 'Wanna delete for sure? 🤔'}, :class => 'button is-danger is-small is-outlined' %>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<%= form_for @cheatsheet do |f| %>
+  <%= f.label :category, 'Language', :class => 'label' %>
+  <div class="select">
+  <%= f.select(:category, Cheatsheet::CATEGORY_LIST) %> <br>
+  </div>
+
+  <%= f.label :tag_list, 'Tags separated by commas', :class => 'label' %>
+  <%= f.text_field :tag_list, :class => 'input' %> <br>
+
+  <%= f.label :title, 'Title', :class => 'label' %>
+  <%= f.text_field :title, :class => 'input' %> <br>
+
+  <%= f.label :body, 'Content', :class => 'label' %>
+  <%= f.cktext_area :body %> <br>
+
+  <% if current_page?(action: 'new') %>
+    <%= f.submit 'Spread', :class => 'button is-primary is-small is-outlined' %>
+  <% end %>
+  <% if current_page?(action: 'edit') %>
+    <%= f.submit 'Update', :class => 'button is-primary is-small is-outlined' %>
+  <% end %>
+
+<% end %>
