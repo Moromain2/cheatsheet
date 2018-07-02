@@ -9,11 +9,28 @@
 
   <div class="content column is-9 is-offset-3">
     <div class="show-page">
+      <% @cheatsheets.each do |cheatsheet| %>
       <div class="content-wrapper">
-        <h1 class="home-static-title">Last publication 🤓</h1>
-        <p>Published in <strong><%= @cheatsheets.last.category %></strong></p>
-        <h1><%= @cheatsheets.last.title %></h1>
-        <%= @cheatsheets.last.body.html_safe %>
+        <div class="category-container">
+          <div class="language-icon">
+            <% if cheatsheet.category == 'HTML' %>
+              <%= image_tag('HTML5.svg') %>
+            <% end %>
+            <% if cheatsheet.category == 'Ruby on Rails' %>
+              <%= image_tag('rails.svg') %>
+            <% end %>
+            <% if cheatsheet.category == 'CSS' %>
+              <%= image_tag('CSS.svg') %>
+            <% end %>
+            <% if cheatsheet.category == 'Javascript' %>
+              <%= image_tag('javascript.svg') %>
+            <% end %>
+          </div>
+          <p>Published in <strong><%= cheatsheet.category %></strong></p>
+        </div>
+        <h1><%= cheatsheet.title %></h1>
+        <%= cheatsheet.body.html_safe %>
     </div>
+    <% end %>
   </div>
 </div>

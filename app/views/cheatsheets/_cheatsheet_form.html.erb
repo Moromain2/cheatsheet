@@ -14,10 +14,10 @@
   <%= f.cktext_area :body %> <br>
 
   <% if current_page?(action: 'new') %>
-    <%= f.submit 'Spread', :class => 'button is-primary is-small is-outlined' %>
+    <%= f.submit 'Spread', :class => 'button is-primary is-outlined' %>
   <% end %>
   <% if current_page?(action: 'edit') %>
-    <%= f.submit 'Update', :class => 'button is-primary is-small is-outlined' %>
+    <%= f.submit 'Update', :class => 'button is-primary is-outlined' %>
   <% end %>
 
 <% end %>

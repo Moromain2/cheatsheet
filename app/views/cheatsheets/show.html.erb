@@ -1,5 +1,21 @@
 <div class="content-wrapper">
-  <p>Published in <strong><%= @cheatsheet.category %></strong></p>
+  <div class="category-container">
+    <div class="language-icon">
+      <% if @cheatsheet.category == 'HTML' %>
+        <%= image_tag('HTML5.svg') %>
+      <% end %>
+      <% if @cheatsheet.category == 'Ruby on Rails' %>
+        <%= image_tag('rails.svg') %>
+      <% end %>
+      <% if @cheatsheet.category == 'CSS' %>
+        <%= image_tag('CSS.svg') %>
+      <% end %>
+      <% if @cheatsheet.category == 'Javascript' %>
+        <%= image_tag('javascript.svg') %>
+      <% end %>
+    </div>
+    <p>Published in <strong><%= @cheatsheet.category %></strong></p>
+  </div>
   <p>Tags: <span class="tag-view"><%= raw @cheatsheet.tag_list.map { |t| link_to t, tag_path(t) }. join(', ') %></span></p>
   <h1><%= @cheatsheet.title %></h1>
   <%= @cheatsheet.body.html_safe %>
