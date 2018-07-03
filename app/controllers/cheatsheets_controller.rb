@@ -4,10 +4,7 @@ class CheatsheetsController < ApplicationController
     @cheatsheet_last = Cheatsheet.last
     if params[:title]
       @cheatsheets = Cheatsheet.where('title LIKE ?', "%#{params[:title]}%")
-    else
-      @cheatsheets = Cheatsheet.all
-    end
-    if params[:tag]
+    elsif params[:tag]
       @cheatsheets = Cheatsheet.tagged_with(params[:tag])
     else
       @cheatsheets = Cheatsheet.all
