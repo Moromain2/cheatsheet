@@ -1,6 +1,7 @@
 class CheatsheetsController < ApplicationController
   def index
     @cheatsheets = Cheatsheet.order("created_at desc")
+    @cheatsheet_last = Cheatsheet.last
     if params[:tag]
       @cheatsheets = Cheatsheet.tagged_with(params[:tag])
     else

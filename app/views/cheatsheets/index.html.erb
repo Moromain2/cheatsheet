@@ -1,5 +1,6 @@
 <div class="columns">
   <div class="side-nav column is-3">
+    <h3 class="side-menu-title">All cheatsheets</h3>
     <ul>
       <% @cheatsheets.each do |cheatsheet| %>
         <li><%= link_to cheatsheet.title, cheatsheet_path(cheatsheet) %> (in <em><%= cheatsheet.category %></em>)</li>
@@ -7,30 +8,40 @@
     </ul>
   </div>
 
-  <div class="content column is-9 is-offset-3">
-    <div class="show-page">
-      <% @cheatsheets.each do |cheatsheet| %>
-      <div class="content-wrapper">
-        <div class="category-container">
-          <div class="language-icon">
-            <% if cheatsheet.category == 'HTML' %>
+  <div class="index-main-container column is-9 is-offset-3">
+    <div class="index-hero">
+      <h1>Welcome to the web devlopment cheatsheet</h1>
+      <p>As I am learning web development on my own, I've created this app to upload my notes and the tips I find usefull in all kind of web developpment aspects.</p>
+      <p>The content is going to evolve as I learn more and more stuff everyday.</p>
+      <p>I'm happy to share all my findings with anyone. If you want to contact me, follow the link bellow ✌🏼</p>
+      <%= mail_to 'mosser.romain@gmail.com', 'Email me', :class => 'button is-primary is-outlined' %>
+      <hr>
+    </div>
+
+    <div class="index-last-post">
+      <h2>Lastest post ⬇️</h2>
+      <div class="category-container">
+        <div class="language-icon">
+          <% @cheatsheets.each do |c| %>
+            <% if c.category == 'HTML' %>
               <%= image_tag('HTML5.svg') %>
             <% end %>
-            <% if cheatsheet.category == 'Ruby on Rails' %>
+            <% if c.category == 'Ruby on Rails' %>
               <%= image_tag('rails.svg') %>
             <% end %>
-            <% if cheatsheet.category == 'CSS' %>
+            <% if c.category == 'CSS' %>
               <%= image_tag('CSS.svg') %>
             <% end %>
-            <% if cheatsheet.category == 'Javascript' %>
+            <% if c.category == 'Javascript' %>
               <%= image_tag('javascript.svg') %>
             <% end %>
-          </div>
-          <p>Published in <strong><%= cheatsheet.category %></strong></p>
+          <% end %>
         </div>
-        <h1><%= cheatsheet.title %></h1>
-        <%= cheatsheet.body.html_safe %>
+        <p>Published in <strong><%= @cheatsheet_last.category %></strong></p>
+      </div>
+      <h1><%= @cheatsheet_last.title %></h1>
+      <%= @cheatsheet_last.body.html_safe %>
     </div>
-    <% end %>
   </div>
+
 </div>

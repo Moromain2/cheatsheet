@@ -6,6 +6,7 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito:300,400,700');
 @import "bulma";
 
+/* == General == */
 * {
   margin: 0;
   padding: 0;
@@ -28,41 +29,59 @@ h2 {
 h3 {
   font-size: 1.2em;
 }
-
-h1.home-static-title {
-  font-weight: 300;
-  font-size: 1em;
-  text-transform: uppercase;
-  background-color: #444444;
-  color: #FEFEFE;
-  padding: 5px 10px;
-  display: inline-block;
-}
-
-.content h1:not(:first-child) {
-  margin-top: 0;
-}
-
 .input, .select {
   margin-bottom: 22px;
 }
 
-.content-wrapper {
-  margin-bottom: 30px;
-  padding: 60px 5% 0;
-}
+/* == Show pages */
 .crud-links {
   margin-top: 20px;
 }
-
 .tag-view {
   text-transform: capitalize;
+  background: rand
+}
+.category-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 7px;
+}
+.language-icon {
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+  margin-right: 6px;
+  img {
+    width: 100%;
+  }
+}
+.show-container {
+  padding: 60px 5%;
 }
 
+/* == Index == */
+.index-main-container {
+  padding: 80px 5%;
+  height: 100vh;
+  overflow: scroll;
+}
+.index-hero {
+  margin-bottom: 20px;
+  .button {
+    margin-top: 10px;
+  }
+}
+.index-last-post {
+  h2 {
+    margin-bottom: 30px;
+  }
+}
+
+/* == Navigation */
 .side-nav {
   height: calc(100vh - 40px);
   background-color: #444444;
- color: #EFEFEF;
+  color: #EFEFEF;
   position: absolute;
   bottom: 0;
   overflow: scroll;
@@ -80,11 +99,14 @@ h1.home-static-title {
   li:hover {
     opacity: 1;
   }
-}
-
-.content {
-  height: calc(100vh - 40px);
-  overflow: scroll;
+  .side-menu-title {
+    padding-left: 20px;
+    padding-bottom: 4px;
+    margin-bottom: 22px;
+    border-bottom: 1px solid #FEFEFE;
+    text-transform: uppercase;
+    opacity: .4;
+  }
 }
 
 .top-nav {
@@ -127,25 +149,11 @@ h1.home-static-title {
   }
 }
 
-.show-page {
-  height: 100vh;
-  position: absolute;
-  bottom: 0;
-  overflow: scroll;
-}
-
-.category-container {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.language-icon {
-  width: 20px;
-  height: 20px;
-  overflow: hidden;
-  margin-right: 6px;
-  img {
-    width: 100%;
+/* ==================== */
+/* === MEDIA QUERIES === */
+/* ==================== */
+@media screen and (max-width: 768px) {
+  .side-nav {
+    display: none;
   }
 }
