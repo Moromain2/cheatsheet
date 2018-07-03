@@ -19,13 +19,14 @@
           <li><%= link_to 'Home', root_path %></li>
           <li><%= link_to 'New', new_cheatsheet_path, :class => 'button-new' %></li>
           <li>|</li>
-          <li class="top-nav-label">Languages:</li>
-          <li>HTML</li>
-          <li>RoR</li>
-          <li>CSS</li>
-          <li>Js.</li>
         </ul>
       </nav>
+      <%= form_tag(cheatsheets_path, method: :get) do %>
+        <div class="search-bar">
+          <%= text_field_tag :title, params[:title], class: 'input is-small'  %>
+          <%= submit_tag 'Search', name: nil, class: 'button is-small is-primary' %>
+        </div>
+      <% end %>
     </div>
     <%= yield %>
   </body>

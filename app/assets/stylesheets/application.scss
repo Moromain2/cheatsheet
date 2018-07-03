@@ -79,8 +79,10 @@ h3 {
 .search-bar {
   display: flex;
   padding: 0 20px;
+  align-items: center;
   .input {
-    margin-right: 4px;
+    margin-right: 3px;
+    margin-bottom: 0;
   }
 }
 
@@ -109,7 +111,7 @@ h3 {
   .side-menu-title {
     padding-left: 20px;
     padding-bottom: 4px;
-    margin-bottom: 22px;
+    margin-bottom: 7px;
     border-bottom: 1px solid #FEFEFE;
     text-transform: uppercase;
     opacity: .4;
