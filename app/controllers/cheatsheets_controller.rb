@@ -2,6 +2,11 @@ class CheatsheetsController < ApplicationController
   def index
     @cheatsheets = Cheatsheet.order("created_at desc")
     @cheatsheet_last = Cheatsheet.last
+    if params[:title]
+      @cheatsheets = Cheatsheet.where('title LIKE ?', "%#{params[:title]}%")
+    else
+      @cheatsheets = Cheatsheet.all
+    end
     if params[:tag]
       @cheatsheets = Cheatsheet.tagged_with(params[:tag])
     else

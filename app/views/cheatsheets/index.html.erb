@@ -1,5 +1,11 @@
 <div class="columns">
   <div class="side-nav column is-3">
+    <%= form_tag(cheatsheets_path, method: :get) do %>
+    <div class="search-bar">
+      <%= text_field_tag :title, params[:title], class: 'input is-small'  %>
+      <%= submit_tag 'Search', name: nil, class: 'button is-small is-primary' %>
+    </div>
+    <% end %>
     <h3 class="side-menu-title">All cheatsheets</h3>
     <ul>
       <% @cheatsheets.each do |cheatsheet| %>
