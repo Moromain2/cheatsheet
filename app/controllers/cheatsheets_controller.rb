@@ -1,4 +1,6 @@
 class CheatsheetsController < ApplicationController
+  before_action :authenticate_user!
+  
   def index
     @cheatsheets = Cheatsheet.order("created_at desc")
     @cheatsheet_last = Cheatsheet.last

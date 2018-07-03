@@ -13,12 +13,20 @@
   </head>
 
   <body>
+    <div class="devise-messages">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+    </div>
+
     <div class="top-nav">
       <nav>
         <ul>
           <li><%= link_to 'Home', root_path %></li>
-          <li><%= link_to 'New', new_cheatsheet_path, :class => 'button-new' %></li>
-          <li>|</li>
+          <li>
+            <% if user_signed_in? %>
+              <%= link_to 'New', new_cheatsheet_path, :class => 'button-new' %>
+            <% end %>
+          </li>
         </ul>
       </nav>
       <%= form_tag(cheatsheets_path, method: :get) do %>

@@ -46,4 +46,7 @@ gem 'paperclip'
 #Tag system
 gem 'acts-as-taggable-on', '~> 6.0'
 
+#Authentification
+gem 'devise'
+
 ruby '2.3.4'
