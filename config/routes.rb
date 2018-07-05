@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, skip: [:registrations]
+  devise_for :users
   mount Ckeditor::Engine => '/ckeditor'
   resources :cheatsheets
   get 'tags/:tag', to: 'cheatsheets#index', as: :tag

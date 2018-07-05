@@ -2,7 +2,6 @@
   <div class="columns">
     <div class="column is-4 is-offset-4">
       <h2>Log in</h2>
-
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="field">
           <%= f.label :email %><br />
@@ -27,6 +26,12 @@
       <% end %>
 
       <%= render "devise/shared/links" %>
+
+      <div style="margin-top:30px">
+      <p>You have to be signed in to create or modify a cheatsheet</p>
+      <p>If there is something you want to say me about one of my posts, please send me an email with the link bellow</p><br>
+      <%= mail_to 'mosser.romain@gmail.com', 'Email me', :class => 'button is-primary is-outlined is-small' %>
+      </div>
     </div>
   </div>
 </div>
