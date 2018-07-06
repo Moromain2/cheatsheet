@@ -20,7 +20,7 @@
   <h1><%= @cheatsheet.title %></h1>
   <%= @cheatsheet.body.html_safe %>
 
-  <% if current_user == user_signed_in? %>
+  <% if user_signed_in? %>
     <div class="crud-links">
       <%= link_to 'Edit', edit_cheatsheet_path, :class => 'button is-primary is-small is-outlined' %>
       <%= link_to 'Delete', @cheatsheet, method: :delete, data: {confirm: 'Wanna delete for sure? 🤔'}, :class => 'button is-danger is-small is-outlined' %>
