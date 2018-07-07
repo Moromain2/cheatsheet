@@ -14,12 +14,11 @@ CKEDITOR.editorConfig = function (config) {
     ['Format', 'Styles'],
     ['BulletedList','NumberedList','Blockquote'],
     ['Link','Unlink'],
-    ['Image', 'Attachment', 'Flash', 'MediaEmbed'],
+    ['Image', 'Attachment', 'Flash', 'Iframe'],
     ['Outdent','Indent'],
     ['Undo','Redo'],
     ['Source']
   ];
   config.toolbar = "basic";
   config.height = 400;
-  config.extraPlugins = 'mediaembed';
 }
